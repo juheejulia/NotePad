@@ -1,4 +1,14 @@
 package com.example.notepad;
 
-public class EditorContract {
+import java.util.List;
+
+public interface EditorContract {
+
+    interface View {
+        String getNote();
+    }
+
+    interface Presenter {
+        void onSaveButtonClicked();
+    }
 }
