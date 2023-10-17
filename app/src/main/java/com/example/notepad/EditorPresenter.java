@@ -2,12 +2,12 @@ package com.example.notepad;
 
 public class EditorPresenter implements EditorContract.Presenter {
 
-    DataManager dataManager;
+    FileManager fileManager;
     EditorContract.View view;
     Navigator navigator;
 
-    public EditorPresenter(DataManager dataManager, EditorContract.View view) {
-        this.dataManager = dataManager;
+    public EditorPresenter(FileManager fileManager, EditorContract.View view) {
+        this.fileManager = fileManager;
         this.view = view;
     }
 

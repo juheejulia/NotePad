@@ -1,25 +1,34 @@
 package com.example.notepad;
 
+// note data
 public class Note {
-    private String note;
 
-    public Note(String note) {
-        this.note = note;
+    private String title;
+    private String content;
+
+    // constructor, skapa instans av klassen
+    public Note(String title) {
+        this.title = title;
     }
 
-    public String getNote() {
-        return note;
+    public String getTitle() {
+        return title;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public String getContent() {
+        return content;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Override
     public String toString() {
-        return note;
-    }
-
-    public void add(String note) {
+        return content;
     }
 }

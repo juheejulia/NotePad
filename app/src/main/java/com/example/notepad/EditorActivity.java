@@ -3,8 +3,6 @@ package com.example.notepad;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
 
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
 
-        presenter = new EditorPresenter(new DataManager(), this);
+        presenter = new EditorPresenter(new FileManager(), this);
     }
 
     @Override
