@@ -3,12 +3,11 @@ package com.example.notepad;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import java.io.File;
+import java.util.Collections;
 import java.util.List;
 
 // main page, It shows all saved notes lists and it is selectable
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FileManager fileManager = new FileManager();
+        FileManager fileManager = new FileManager(this);
 
         mainPresenter = new MainPresenter(fileManager, this, new Navigator(this));
         editorPresenter = new EditorPresenter(fileManager, this);

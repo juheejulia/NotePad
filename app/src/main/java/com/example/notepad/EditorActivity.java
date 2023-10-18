@@ -16,7 +16,7 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
 
-        presenter = new EditorPresenter(new FileManager(), this);
+        presenter = new EditorPresenter(new FileManager(this), this);
     }
 
     @Override

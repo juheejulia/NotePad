@@ -1,6 +1,7 @@
 package com.example.notepad;
 
 import android.util.Log;
+import android.view.View;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class MainPresenter implements MainContract.Presenter {
     public void onViewCreated() {
 
         List<Note> notes = fileManager.getNotes();
-        Log.d("onViewCreated", "note: " + String.valueOf(notes.get(0).getTitle()));
+        //Log.d("onViewCreated", String.valueOf(notes.get(0).getTitle()));
         view.displayNotes(notes);
 
     }
