@@ -1,4 +1,51 @@
 <resources>
     <string name="app_name">NotePad</string>
     <string name="delete">Delete</string>
+    <string name="content">This is a content. Cras turpis sapien, rutrum sed cursus ut, porttitor at ipsum.
+        Pellentesque lobortis neque at accumsan mattis. In hac habitasse platea dictumst.
+        Etiam sed suscipit eros. Nunc consectetur arcu nec hendrerit lobortis.
+        In hac habitasse platea dictumst. Vestibulum vulputate elit eget nisl semper,
+        id consectetur ligula iaculis. Aliquam id lectus vitae quam malesuada sollicitudin.
+        Proin non ex dolor. Praesent vitae ligula vel neque commodo efficitur.
+        Duis tincidunt euismod porttitor. Phasellus venenatis tristique quam sed venenatis.
+        Vestibulum eget congue elit. Donec viverra eleifend laoreet.
+        Donec non tortor iaculis risus sodales vestibulum at sit amet magna.
+        Maecenas a ipsum ut neque placerat commodo. Mauris a ipsum et enim imperdiet mattis.
+        Sed turpis risus, ultrices tincidunt faucibus quis, ultrices vel augue.
+        Etiam non sagittis magna, id semper tellus. Nulla luctus dui at arcu pulvinar vehicula.
+        Sed consequat id enim ut dapibus. Suspendisse placerat augue vel dui maximus lacinia.
+        Quisque a ullamcorper erat, tempus efficitur neque. Cras risus odio,
+        bibendum semper dolor ut, placerat sagittis lectus.
+        In vulputate ligula a ligula placerat finibus. Mauris maximus,
+        mi in mollis iaculis, urna odio tempor mi, euismod bibendum mauris massa eu massa.
+        Nulla ultrices augue et mi cursus, at facilisis est posuere. Praesent a congue leo.
+        Quisque quis maximus metus. Proin tortor dui, rhoncus ac dolor ut, commodo tempor risus.
+        Phasellus arcu tellus, aliquet quis ultrices nec, lacinia non mauris. Quisque odio tortor,
+        lobortis vel volutpat ac, faucibus id lectus.In imperdiet neque et ante aliquet,
+        quis volutpat augue consequat. Curabitur vel nunc tempor, pellentesque elit id, luctus ex.
+        Mauris posuere mi id urna gravida dignissim. Aliquam erat volutpat.
+        Donec non libero sit amet purus ultricies egestas in a sapien.
+        Fusce pellentesque ut sem sit amet sagittis. Sed ultrices vulputate augue quis vulputate.
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Pellentesque at dignissim massa. Proin id interdum urna.
+        Nulla tincidunt quis tortor eget scelerisque. Pellentesque posuere,
+        ex vitae dignissim luctus, mauris sapien molestie velit, eget commodo diam quam vel neque.
+        Nulla nec enim sem. Suspendisse tempus nibh eget feugiat efficitur.
+        Vestibulum sit amet mi ante. Praesent sed tortor orci.
+        Etiam venenatis ex ac hendrerit sollicitudin.
+        Curabitur vitae risus non mauris placerat tristique. Aliquam placerat efficitur neque a faucibus.
+        Donec ligula lorem, luctus quis interdum eget, eleifend nec eros.
+        Fusce iaculis nisi dapibus quam consequat ultricies.
+        Sed sit amet ullamcorper mauris. Nulla aliquet felis vitae consequat lobortis.
+        Duis venenatis pellentesque risus, at varius risus. Morbi tempor vitae nisi ac congue.
+        Sed ornare pretium nisl ac commodo. Suspendisse potenti.
+        Fusce odio enim, condimentum in convallis sed, laoreet ac dolor. Duis urna ex,
+        laoreet ut finibus in, commodo ac sem.
+        Etiam in quam at leo finibus molestie sit amet eget justo</string>
+    <string name="add_button">Add button</string>
+    <string name="search_hint">search</string>
+    <string name="my_notes">My Notes</string>
+    <string name="new_game">New game</string>
+    <string name="help">Help</string>
+    <string name="save">SAVE</string>"
 </resources>

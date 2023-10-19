@@ -71,6 +71,11 @@ public class FileManager {
     public List<Note> getNotes() {
         createNote("MyNewFile", "This is the content of the file");
         createNote("MyNewFile2", "This is the content of the file 2");
+        createNote("MyNewFile3", "This is the content of the file 3");
+        createNote("MyNewFile4", "This is the content of the file 4");
+        createNote("MyNewFile5", "This is the content of the file 5");
+        createNote("MyNewFile6", "This is the content of the file 6");
+        createNote("MyNewFile7", "This is the content of the file 7");
         return notes;
     }
 

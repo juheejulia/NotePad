@@ -1,40 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/myNotePadListView"
+    android:id="@+id/myNotesListView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
     tools:context=".View.MainActivity">
 
-    <!-- list title text -->
-    <TextView
-        android:id="@+id/myNotePadText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:gravity="center"
-        android:text="My Note Pad"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- title, map_btn, add_new_btn Layout -->
+    <LinearLayout
+        android:id="@+id/title_fab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
-     <!-- notepad listview -->
+        <!-- list title text -->
+        <TextView
+            android:id="@+id/myNotesText"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="100dp"
+            android:layout_weight="1"
+            android:text="@string/my_notes"
+            android:textColor="#343435"
+            android:textDirection="ltr"
+            android:textSize="@dimen/_30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.33"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- to map navigation button -->
+        <ImageButton
+            android:id="@+id/btn_map_navigation"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:contentDescription="btn_map"
+            android:scaleType="centerCrop"
+            android:backgroundTint="#F4D8D5"/>
+
+        <!-- float action add new button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_fa_add_new"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="@dimen/_20dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/add_button"
+            app:rippleColor="@color/white" />
+    </LinearLayout>
+
+    <!-- search view -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="@dimen/_20dp"
+        android:layout_marginRight="@dimen/_20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_below="@+id/title_fab_layout"
+        android:background="@color/white"
+        app:queryHint="@string/search_hint"
+        android:outlineSpotShadowColor="@color/white"
+        android:iconifiedByDefault="false">
+    </androidx.appcompat.widget.SearchView>
+
+    <!-- notepad listview -->
     <ListView
-        android:id="@+id/notePadListView"
-        android:layout_width="369dp"
-        android:layout_height="618dp"
+        android:id="@+id/notesListView"
+        android:layout_width="match_parent"
+        android:layout_height="560dp"
+        android:layout_below="@+id/searchView"
         android:layout_marginHorizontal="@dimen/_20dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
         android:divider="@color/white"
-        android:dividerHeight="20dp"
+        android:dividerHeight="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,5 +98,4 @@
         app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/listitem_content" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="test_color">#972020</color>
     <color name="my_light_primary">#B6B5B5</color>
+    <color name="_333232">#333232</color>
+    <color name="_3f3f49">#3F3F49</color>
+    <color name="e0f7fa">#E0F7FA</color>
 </resources>

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mainPresenter = new MainPresenter(fileManager, this, new Navigator(this));
         editorPresenter = new EditorPresenter(fileManager, this);
 
-        notePadListView = findViewById(R.id.notePadListView);
+        notePadListView = findViewById(R.id.notesListView);
         //Todo: create a button that create a new file/note and make a method to save it in local storage
 
 
