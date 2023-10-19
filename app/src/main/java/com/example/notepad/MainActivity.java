@@ -7,7 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import java.util.Collections;
+import com.example.notepad.Models.Note;
+
 import java.util.List;
 
 // main page, It shows all saved notes lists and it is selectable

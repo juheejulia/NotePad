@@ -2,6 +2,8 @@ package com.example.notepad;
 
 import android.content.Context;
 
+import com.example.notepad.Models.Note;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;

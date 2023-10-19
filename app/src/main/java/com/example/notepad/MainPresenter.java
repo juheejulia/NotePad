@@ -1,7 +1,6 @@
 package com.example.notepad;
 
-import android.util.Log;
-import android.view.View;
+import com.example.notepad.Models.Note;
 
 import java.util.List;
 

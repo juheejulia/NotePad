@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.notepad.Models.Note;
+
 import java.util.List;
 
 // page viewed the selected note and user can edit and save it it.
