@@ -1,4 +1,4 @@
-package com.example.notepad;
+package com.example.notepad.Models;
 
 import com.example.notepad.Models.Note;
 

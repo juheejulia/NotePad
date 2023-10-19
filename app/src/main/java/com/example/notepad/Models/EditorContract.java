@@ -1,4 +1,4 @@
-package com.example.notepad;
+package com.example.notepad.Models;
 
 import java.util.List;
 

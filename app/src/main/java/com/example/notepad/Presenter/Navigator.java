@@ -1,7 +1,10 @@
-package com.example.notepad;
+package com.example.notepad.Presenter;
 
 import android.content.Context;
 import android.content.Intent;
+
+import com.example.notepad.View.EditorActivity;
+import com.example.notepad.View.MainActivity;
 
 public class Navigator {
     private Context context;

@@ -1,5 +1,7 @@
-package com.example.notepad;
+package com.example.notepad.Presenter;
 
+import com.example.notepad.Models.FileManager;
+import com.example.notepad.Models.MainContract;
 import com.example.notepad.Models.Note;
 
 import java.util.List;

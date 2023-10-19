@@ -1,10 +1,15 @@
-package com.example.notepad;
+package com.example.notepad.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.notepad.Models.EditorContract;
+import com.example.notepad.Models.FileManager;
+import com.example.notepad.Models.MainContract;
 import com.example.notepad.Models.Note;
+import com.example.notepad.Presenter.EditorPresenter;
+import com.example.notepad.R;
 
 import java.util.List;
 

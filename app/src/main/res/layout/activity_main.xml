@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".View.MainActivity">
 
     <!-- list title text -->
     <TextView
@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- notepad listview -->
+     <!-- notepad listview -->
     <ListView
         android:id="@+id/notePadListView"
         android:layout_width="369dp"
