@@ -48,6 +48,8 @@
     <string name="new_game">New game</string>
     <string name="help">Help</string>
     <string name="save">SAVE</string>"
-    <string name="exampleText">Here you can write your note.</string>"
+    <string name="exampleText">Here you can write your note.</string>
+    <string name="cancel">CANCEL</string>"
+
 
 </resources>

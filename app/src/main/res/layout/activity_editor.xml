@@ -7,41 +7,74 @@
     android:layout_margin="@dimen/_30dp"
     android:backgroundTint="@color/my_light_primary">
 
-    <!-- save button -->
 
-    <!-- layout of title, category, content -->
-
-    <Button
-        android:id="@+id/btn_save"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="272dp"
-        android:backgroundTint="#E0E1E1"
-        android:text="@string/save"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_12sp"
-        app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
+    <!-- save, cancel_back button -->
+    <LinearLayout
+        android:id="@+id/save_cancel_button_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-    </Button>
 
+        <!-- cancel, back button -->
+        <Button
+            android:id="@+id/btn_cancel_back"
+            android:layout_width="00dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="80dp"
+            android:backgroundTint="#E0E1E1"
+            android:text="@string/cancel"
+            android:textColor="@color/black"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <!-- cancel/back button -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="80dp"
+            android:backgroundTint="#E0E1E1"
+            android:text="@string/save"
+            android:textColor="@color/black"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </Button>
+    </LinearLayout>
+
+
+    <!-- layout of title, category, content -->
     <RelativeLayout
         android:id="@+id/titleCategoryContentLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_save">
+        app:layout_constraintTop_toBottomOf="@+id/save_cancel_button_layout">
 
         <!-- card title text -->
         <EditText
-            android:id="@+id/textTitleCardView"
+            android:id="@+id/titleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="7dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="7dp"
             android:background="@null"
             android:hint="Title"
             android:maxLines="2"
@@ -51,10 +84,10 @@
 
         <!-- card category text -->
         <EditText
-            android:id="@+id/category"
+            android:id="@+id/categoryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textTitleCardView"
+            android:layout_below="@+id/titleText"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -71,7 +104,7 @@
             android:id="@+id/contentText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/category"
+            android:layout_below="@+id/categoryText"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"

@@ -2,8 +2,6 @@ package com.example.notepad.Models;
 
 import android.content.Context;
 
-import com.example.notepad.Models.Note;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,25 +15,24 @@ import java.util.Scanner;
 // It reads local storage and builds note objects
 public class FileManager {
     Context context;
-
     private static ArrayList<Note> notes = new ArrayList<>();
 
     public FileManager(Context context) {
-        String[] array;
+        //String[] array;
         this.context = context;
     }
 
-    public Note createNote(String title, String content) {
+    public Note createNote(String title, String category, String content) {
         //Todo: create a file in local storage
 
-        saveNoteToFile(title, content);
+        saveNoteToFile(title, category, content);
         Note note = new Note(title);
         note.setContent(content);
         notes.add(note);
         return note;
     }
 
-    public void saveNoteToFile(String fileName, String noteToSave) {
+    public void saveNoteToFile(String fileName, String noteToSave, String category) {
         if (!noteToSave.isEmpty()) {
             File folder = new File(context.getFilesDir(), "MyNoteFile");
             if (!folder.exists()) {
@@ -57,7 +54,7 @@ public class FileManager {
         }
     }
 
-    public String getNotesFromFile() {
+    public String loadFromFile() {
         try {
             File readFile = new File(context.getFilesDir(), "/MyNoteFile/MyNewFile.txt");
             Scanner scanner = new Scanner(readFile);
@@ -69,13 +66,13 @@ public class FileManager {
     }
 
     public List<Note> getNotes() {
-        createNote("MyNewFile", "This is the content of the file");
-        createNote("MyNewFile2", "This is the content of the file 2");
-        createNote("MyNewFile3", "This is the content of the file 3");
-        createNote("MyNewFile4", "This is the content of the file 4");
-        createNote("MyNewFile5", "This is the content of the file 5");
-        createNote("MyNewFile6", "This is the content of the file 6");
-        createNote("MyNewFile7", "This is the content of the file 7");
+        createNote("MyNewFile", "Food", "This is the content of the file");
+        createNote("MyNewFile2", "School","This is the content of the file 2");
+        createNote("MyNewFile3", "Work", "This is the content of the file 3");
+        createNote("MyNewFile4", "Food", "This is the content of the file 4");
+        createNote("MyNewFile5", "School", "This is the content of the file 5");
+        createNote("MyNewFile6", "School", "This is the content of the file 6");
+        createNote("MyNewFile7", "Work", "This is the content of the file 7");
         return notes;
     }
 

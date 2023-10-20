@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.notepad.Models.EditorContract;
@@ -23,7 +22,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
-// main page, It shows all saved notes lists and it is selectable
+// This main page shows all saved notes lists and it is selectable
 public class MainActivity extends AppCompatActivity implements MainContract.View, EditorContract.View {
 
     MainContract.Presenter mainPresenter;
