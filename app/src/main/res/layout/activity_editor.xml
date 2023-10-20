@@ -1,88 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/editCardView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:backgroundTint="@color/my_light_primary"
-    android:padding="16dp">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_30dp"
+    android:backgroundTint="@color/my_light_primary">
 
-   <!-- save button -->
+    <!-- save button -->
+
+    <!-- layout of title, category, content -->
+
     <Button
-        android:id="@+id/button"
-        android:layout_width="50dp"
+        android:id="@+id/btn_save"
+        android:layout_width="45dp"
         android:layout_height="30dp"
-        android:layout_gravity="end|bottom"
-        android:layout_marginStart="332dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="272dp"
+        android:backgroundTint="#E0E1E1"
         android:text="@string/save"
-        android:textColor="@color/_333232"
-        android:textSize="@dimen/_120dp"
-        android:backgroundTint="#FFE1B6"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sp"
+        app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
     </Button>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/titleCategoryContentLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="73dp"
-        app:cardCornerRadius="15dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/btn_save">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- card title text -->
+        <EditText
+            android:id="@+id/textTitleCardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/_30dp">
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:background="@null"
+            android:hint="Title"
+            android:maxLines="2"
+            android:paddingStart="@dimen/_20dp"
+            android:textColor="#232323"
+            android:textSize="@dimen/_30sp" />
 
-            <ImageView
-                android:id="@+id/header_image"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/flowers"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <!-- card category text -->
+        <EditText
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textTitleCardView"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:hint="Category"
+            android:lines="1"
+            android:paddingStart="@dimen/_20dp"
+            android:textColor="#434242"
+            android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/title"
-                style="@style/TextAppearance.MaterialComponents.Headline3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/header_image" />
+        <!-- card content text -->
+        <EditText
+            android:id="@+id/contentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="Here you can write your note."
+            android:lines="30"
+            android:paddingStart="@dimen/_20dp"
+            android:textColor="#232323"
+            android:textSize="14sp" />
+    </RelativeLayout>
 
-            <TextView
-                android:id="@+id/subhead"
-                style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Category"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/title" />
-
-            <TextView
-                android:id="@+id/body"
-                style="@style/TextAppearance.MaterialComponents.Body1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:scrollbars="vertical"
-                android:text="I'm a supporting text. Very Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/subhead" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

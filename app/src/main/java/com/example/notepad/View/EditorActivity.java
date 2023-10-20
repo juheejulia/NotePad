@@ -1,20 +1,14 @@
 package com.example.notepad.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
-import com.example.notepad.Models.MainContract;
-import com.example.notepad.Models.Note;
 import com.example.notepad.Presenter.EditorPresenter;
 import com.example.notepad.R;
 
-import java.util.List;
-
-// page viewed the selected note and user can edit and save it it.
-public class EditorActivity extends AppCompatActivity implements EditorContract.View, MainContract.View {
+// page viewed new/the selected note to edit and save it.
+public class EditorActivity extends AppCompatActivity implements EditorContract.View {
 
     EditorContract.Presenter presenter;
 
@@ -31,8 +25,4 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         return null;
     }
 
-    @Override
-    public void displayNotes(List<Note> notes) {
-
-    }
 }

@@ -2,6 +2,9 @@ package com.example.notepad.Presenter;
 
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
+import com.example.notepad.Models.Note;
+
+import java.util.List;
 
 public class EditorPresenter implements EditorContract.Presenter {
 
@@ -16,6 +19,6 @@ public class EditorPresenter implements EditorContract.Presenter {
 
     @Override
     public void onSaveButtonClicked() {
-        String note = view.getNote();
+        List<Note> note = fileManager.getNotes();
     }
 }

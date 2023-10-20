@@ -47,9 +47,9 @@
             android:scaleType="centerCrop"
             android:backgroundTint="#F4D8D5"/>
 
-        <!-- float action add new button -->
+        <!-- float action create new button -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_fa_add_new"
+            android:id="@+id/btn_fa_create_new"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="35dp"
