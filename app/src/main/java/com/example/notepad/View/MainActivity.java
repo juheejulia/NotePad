@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         FileManager fileManager = new FileManager(this);
 
         mainPresenter = new MainPresenter(fileManager, this, new Navigator(this));
-        editorPresenter = new EditorPresenter(fileManager, this);
+        editorPresenter = new EditorPresenter(fileManager, this, new Navigator(this));
 
         notesListView = findViewById(R.id.notesListView);
         createNewNoteButton = (FloatingActionButton) findViewById(R.id.btn_fa_create_new);
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         return null;
     }
 
+    //display all notes in lists view
     @Override
     public void displayNotes(List<Note> notes) {
 

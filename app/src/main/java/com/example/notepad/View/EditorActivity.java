@@ -10,12 +10,11 @@ import android.widget.EditText;
 
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
-import com.example.notepad.Models.Note;
 import com.example.notepad.Presenter.EditorPresenter;
+import com.example.notepad.Presenter.Navigator;
 import com.example.notepad.R;
-import com.google.android.material.snackbar.Snackbar;
-
-import java.util.List;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 // This editor page viewed new/the selected note to edit and save it.
 public class EditorActivity extends AppCompatActivity implements EditorContract.View {
@@ -24,15 +23,14 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
 
     Button saveButton, cancelBackButton;
     EditText titleInputText, categoryInputText, contentInputText;
-    FileManager fileManager;
+    Navigator navigator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
 
-        presenter = new EditorPresenter(new FileManager(this), this);
-        fileManager = new FileManager(this);
+        presenter = new EditorPresenter(new FileManager(this), this, navigator);
 
         titleInputText = findViewById(R.id.titleText);
         categoryInputText = findViewById(R.id.categoryText);
@@ -40,26 +38,10 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         cancelBackButton = findViewById(R.id.btn_cancel_back);
         saveButton = findViewById(R.id.btn_save);
 
-
         cancelBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Canceled", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-                Intent intent = new Intent(EditorActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Saved", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-                fileManager.saveNoteToFile(titleInputText.getText().toString(), contentInputText.getText().toString(), categoryInputText.getText().toString());
-
+            public void onClick(View v) {
+            navigator.navigateToMainActivity();
             }
         });
     }
@@ -68,5 +50,4 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
     public String getNote() {
         return null;
     }
-
 }
