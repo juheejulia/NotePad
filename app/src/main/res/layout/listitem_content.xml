@@ -7,7 +7,8 @@
     app:flow_horizontalBias="0"
     app:cardCornerRadius="7dp"
     android:elevation="5dp"
-    app:cardPreventCornerOverlap="true">
+    app:cardPreventCornerOverlap="true"
+    android:clickable="true">
 
     <!-- card layout -->
     <LinearLayout

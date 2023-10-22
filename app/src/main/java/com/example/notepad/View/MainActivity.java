@@ -2,12 +2,16 @@ package com.example.notepad.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
@@ -17,6 +21,7 @@ import com.example.notepad.Presenter.Navigator;
 import com.example.notepad.Presenter.EditorPresenter;
 import com.example.notepad.Presenter.MainPresenter;
 import com.example.notepad.R;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     Button mapNavigationButton;
     FloatingActionButton createNewNoteButton;
     ListView notesListView;
+    MaterialCardView noteItem;
     SearchView searchView;
 
     @Override
@@ -59,6 +65,17 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         });
         //Todo: create a button that create a new file/note and make a method to save it in local storage
         mainPresenter.onViewCreated();
+
+        notesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TextView title = view.findViewById(R.id.textTitleCardView);
+                Note note = fileManager.getNoteFromFile(String.valueOf(title));
+                Log.d("note",note.getTitle());
+                Intent intent = new Intent(MainActivity.this, EditorActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -35,8 +35,11 @@ public class NoteAdapter extends ArrayAdapter<Note> {
         Note note = getItem(position);
 
         //update our ViewObject with data from our list-object
-        TextView tv = view.findViewById(R.id.textTitleCardView);
-        tv.setText(note.getTitle());
+        TextView title = view.findViewById(R.id.textTitleCardView);
+        assert note != null;
+        title.setText(note.getTitle());
+        TextView content = view.findViewById(R.id.contentText);
+        content.setText(note.getContent());
 
         return view;
     }

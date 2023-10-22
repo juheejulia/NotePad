@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">NotePad</string>
-    <string name="delete">Delete</string>
+    <string name="delete">DELETE</string>
     <string name="content">This is a content. Cras turpis sapien, rutrum sed cursus ut, porttitor at ipsum.
         Pellentesque lobortis neque at accumsan mattis. In hac habitasse platea dictumst.
         Etiam sed suscipit eros. Nunc consectetur arcu nec hendrerit lobortis.

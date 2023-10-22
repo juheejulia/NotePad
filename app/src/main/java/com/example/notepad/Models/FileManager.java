@@ -22,18 +22,17 @@ public class FileManager {
         this.context = context;
     }
 
-    public Note createNote(String title, String category, String content) {
+    public Note createNote(String title, String content) {
         //Todo: create a file in local storage
-
-        saveNoteToFile(title, category, content);
+        //saveNoteToFile(title, content);
         Note note = new Note(title);
         note.setContent(content);
-        notes.add(note);
+        //notes.add(note);
         return note;
     }
 
-    public void saveNoteToFile(String fileName, String noteToSave, String category) {
-        if (!noteToSave.isEmpty()) {
+    public void saveNoteToFile(String fileName, String content) {
+        if (!content.isEmpty()) {
             File folder = new File(context.getFilesDir(), "MyNoteFile");
             if (!folder.exists()) {
                 folder.mkdir();
@@ -44,7 +43,7 @@ public class FileManager {
             try {
                 PrintWriter writer =
                         new PrintWriter(new BufferedWriter(new FileWriter(noteFile, true)));
-                writer.append(noteToSave);
+                writer.append(content);
                 writer.flush();
                 writer.close();
 
@@ -54,26 +53,41 @@ public class FileManager {
         }
     }
 
-    public String loadFromFile() {
+    public Note getNoteFromFile(String fileName) {
+        String content = "";
         try {
-            File readFile = new File(context.getFilesDir(), "/MyNoteFile/MyNewFile.txt");
+            File readFile = new File(context.getFilesDir(), "/MyNoteFile/" + fileName);
             Scanner scanner = new Scanner(readFile);
-            String s = scanner.nextLine();
-            return s;
+            StringBuilder stringBuilder = new StringBuilder();
+            while (scanner.hasNextLine()) {
+                content = String.valueOf(stringBuilder.append(scanner.nextLine()));
+            }
+            scanner.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException (e);
         }
+        return createNote(fileName, content);
     }
 
     public List<Note> getNotes() {
-        createNote("MyNewFile", "Food", "This is the content of the file");
-        createNote("MyNewFile2", "School","This is the content of the file 2");
-        createNote("MyNewFile3", "Work", "This is the content of the file 3");
-        createNote("MyNewFile4", "Food", "This is the content of the file 4");
-        createNote("MyNewFile5", "School", "This is the content of the file 5");
-        createNote("MyNewFile6", "School", "This is the content of the file 6");
-        createNote("MyNewFile7", "Work", "This is the content of the file 7");
+        File path = new File(context.getFilesDir(),"MyNoteFile");
+        if (!path.exists()) {
+            path.mkdir();
+        }
+        File[] list = path.listFiles();
+        for (File file : list) {
+            String line = "";
+            try {
+                Scanner scanner = new Scanner(file);
+                line = scanner.nextLine();
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException (e);
+            }
+            Note note = createNote(file.getName(), line); //line
+            notes.add(note);
+        }
         return notes;
     }
+
 
 }
