@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,10 +23,10 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
 
     EditorContract.Presenter presenter;
     FileManager fileManager;
-    Button saveButton, cancelBackButton;
+    Button saveButton, cancelBackButton, deleteButton;
     EditText titleInputText, categoryInputText, contentInputText;
     Navigator navigator;
-    ListView notesListview;
+    String selectedNoteTitle, selectedNoteContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +36,26 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         presenter = new EditorPresenter(new FileManager(this), this, navigator);
         fileManager = new FileManager(this);
 
-        // Fetch data that is passed from MainActivity
-        Intent intent = getIntent();
-
         titleInputText = findViewById(R.id.titleText);
         categoryInputText = findViewById(R.id.categoryText);
         contentInputText = findViewById(R.id.contentText);
         cancelBackButton = findViewById(R.id.btn_cancel_back);
         saveButton = findViewById(R.id.btn_save);
+        deleteButton = findViewById(R.id.btn_delete);
         //notesListview = findViewById(R.id.notesListView);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            selectedNoteTitle = extras.getString("NoteTitle");
+            selectedNoteContent = extras.getString("NoteContent");
+        }
+
+        if (selectedNoteTitle != null) {
+            titleInputText.setText(selectedNoteTitle);
+            contentInputText.setText(selectedNoteContent);
+
+        }
+        //assert selectedNoteTitle != null;
+        //Log.d("notTitle", selectedNoteTitle);
 
         cancelBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

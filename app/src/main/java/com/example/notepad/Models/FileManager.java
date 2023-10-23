@@ -41,10 +41,9 @@ public class FileManager {
             File noteFile = new File(folder, fileName + ".txt");
 
             try {
-                PrintWriter writer =
-                        new PrintWriter(new BufferedWriter(new FileWriter(noteFile, true)));
-                writer.append(content);
-                writer.flush();
+                FileWriter writer = new FileWriter(noteFile, false);
+                writer.write(content);
+                //writer.flush();
                 writer.close();
 
             } catch (IOException e) {
@@ -53,7 +52,6 @@ public class FileManager {
         }
     }
 
-    // Selected note shall be shown
     public Note getNoteFromFile(String fileName) {
         String content = "";
         try {
@@ -70,7 +68,7 @@ public class FileManager {
         return createNote(fileName, content);
     }
 
-    // Saved note shall show on the main activity view
+    // Saved note shows on the list view
     public List<Note> getNotes() {
         File path = new File(context.getFilesDir(),"MyNoteFile");
         if (!path.exists()) {
@@ -85,7 +83,8 @@ public class FileManager {
             } catch (FileNotFoundException e) {
                 throw new RuntimeException (e);
             }
-            Note note = createNote(file.getName(), line); //line
+            String noteTitle = file.getName().replace(".txt", "");
+            Note note = createNote(noteTitle, line); //line
             notes.add(note);
         }
         return notes;

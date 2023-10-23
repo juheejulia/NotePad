@@ -67,11 +67,15 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         notesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView title = view.findViewById(R.id.textTitleCardView);
-                Note note = fileManager.getNoteFromFile(String.valueOf(title));
-                //Log.d("note",note.getTitle());
+                Note selectedNote = (Note) parent.getItemAtPosition(position);
                 Intent intent = new Intent(MainActivity.this, EditorActivity.class);
+                intent.putExtra("NoteTitle", selectedNote.getTitle());
+                intent.putExtra("NoteContent", selectedNote.getContent());
                 startActivity(intent);
+
+                // Re-road activity
+                //finish();
+                //startActivity(getIntent());
             }
         });
     }
