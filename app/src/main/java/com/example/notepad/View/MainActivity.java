@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,13 +26,12 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
-// This main page shows all saved notes lists and it is selectable
+// This main page shows all saved notes list and it is selectable
 public class MainActivity extends AppCompatActivity implements MainContract.View, EditorContract.View {
 
     MainContract.Presenter mainPresenter;
     EditorContract.Presenter editorPresenter;
 
-    Button mapNavigationButton;
     FloatingActionButton createNewNoteButton;
     ListView notesListView;
     MaterialCardView noteItem;
@@ -48,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         mainPresenter = new MainPresenter(fileManager, this, new Navigator(this));
         editorPresenter = new EditorPresenter(fileManager, this, new Navigator(this));
-
         notesListView = findViewById(R.id.notesListView);
         createNewNoteButton = (FloatingActionButton) findViewById(R.id.btn_fa_create_new);
 
@@ -63,15 +60,16 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 startActivity(intent);
             }
         });
-        //Todo: create a button that create a new file/note and make a method to save it in local storage
+        // The new created note which is added shall be displayed on the list view in MainActivity
         mainPresenter.onViewCreated();
 
+        // The old note shall be opened on the EditorActivity to edit and re-save
         notesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView title = view.findViewById(R.id.textTitleCardView);
                 Note note = fileManager.getNoteFromFile(String.valueOf(title));
-                Log.d("note",note.getTitle());
+                //Log.d("note",note.getTitle());
                 Intent intent = new Intent(MainActivity.this, EditorActivity.class);
                 startActivity(intent);
             }
@@ -83,10 +81,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         return null;
     }
 
-    //display all notes in lists view
+    //Display all notes in lists view
     @Override
     public void displayNotes(List<Note> notes) {
-
         NoteAdapter adapter = new NoteAdapter(this,notes);
         notesListView.setAdapter(adapter);
     }

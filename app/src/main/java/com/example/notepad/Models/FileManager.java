@@ -53,6 +53,7 @@ public class FileManager {
         }
     }
 
+    // Selected note shall be shown
     public Note getNoteFromFile(String fileName) {
         String content = "";
         try {
@@ -69,6 +70,7 @@ public class FileManager {
         return createNote(fileName, content);
     }
 
+    // Saved note shall show on the main activity view
     public List<Note> getNotes() {
         File path = new File(context.getFilesDir(),"MyNoteFile");
         if (!path.exists()) {

@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="2">
 
         <!-- list title text -->
         <TextView
@@ -35,26 +35,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- to map navigation button -->
-        <ImageButton
-            android:id="@+id/btn_map_navigation"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:contentDescription="btn_map"
-            android:scaleType="centerCrop"
-            android:backgroundTint="#F4D8D5"/>
-
         <!-- float action create new button -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_fa_create_new"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="35dp"
-            android:layout_marginRight="@dimen/_20dp"
+            android:layout_marginStart="50dp"
             android:layout_weight="1"
+            android:src="@mipmap/ic_launcher"
+            app:ensureMinTouchTargetSize="true"
             android:contentDescription="@string/add_button"
             app:rippleColor="@color/white" />
     </LinearLayout>

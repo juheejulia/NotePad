@@ -48,7 +48,7 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         cancelBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            navigator.navigateToMainActivity();
+            finish();
             }
         });
 

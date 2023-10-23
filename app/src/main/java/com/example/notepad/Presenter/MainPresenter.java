@@ -3,7 +3,6 @@ package com.example.notepad.Presenter;
 import com.example.notepad.Models.FileManager;
 import com.example.notepad.Models.MainContract;
 import com.example.notepad.Models.Note;
-
 import java.util.List;
 
 public class MainPresenter implements MainContract.Presenter {
@@ -17,12 +16,10 @@ public class MainPresenter implements MainContract.Presenter {
         this.navigator = navigator;
     }
 
+    // The new created note which is added shall be displayed on the list view in MainActivity
     @Override
     public void onViewCreated() {
-
         List<Note> notes = fileManager.getNotes();
-        //Log.d("onViewCreated", String.valueOf(notes.get(0).getTitle()));
         view.displayNotes(notes);
-
     }
 }
