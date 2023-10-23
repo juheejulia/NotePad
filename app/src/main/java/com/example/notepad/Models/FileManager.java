@@ -52,20 +52,14 @@ public class FileManager {
         }
     }
 
-    public Note getNoteFromFile(String fileName) {
-        String content = "";
+    public void deleteFile(String fileName) {
         try {
-            File readFile = new File(context.getFilesDir(), "/MyNoteFile/" + fileName);
-            Scanner scanner = new Scanner(readFile);
-            StringBuilder stringBuilder = new StringBuilder();
-            while (scanner.hasNextLine()) {
-                content = String.valueOf(stringBuilder.append(scanner.nextLine()));
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
+            File file = new File(context.getFilesDir(), "/MyNoteFile/" + fileName + ".txt");
+            file.delete();
+            notes.clear();
+        } catch (SecurityException e) {
             throw new RuntimeException (e);
         }
-        return createNote(fileName, content);
     }
 
     // Saved note shows on the list view
@@ -89,6 +83,4 @@ public class FileManager {
         }
         return notes;
     }
-
-
 }

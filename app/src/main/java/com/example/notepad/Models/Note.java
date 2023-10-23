@@ -7,9 +7,6 @@ public class Note {
     private String content;
     private int date;
 
-    //Todo: pin/unpin, autoGenerate?
-
-    // constructor, skapa instans av klassen
     public Note(String title) {
         this.title = title;
     }

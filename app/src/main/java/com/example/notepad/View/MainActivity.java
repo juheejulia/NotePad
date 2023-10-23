@@ -80,10 +80,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         });
     }
 
-    @Override
-    public String getNote() {
-        return null;
-    }
 
     //Display all notes in lists view
     @Override

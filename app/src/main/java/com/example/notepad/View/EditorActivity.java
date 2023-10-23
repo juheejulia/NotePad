@@ -1,22 +1,16 @@
 package com.example.notepad.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
 import com.example.notepad.Presenter.EditorPresenter;
 import com.example.notepad.Presenter.Navigator;
 import com.example.notepad.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.textfield.TextInputEditText;
 
 // This editor page viewed new/the selected note to edit and save it.
 public class EditorActivity extends AppCompatActivity implements EditorContract.View {
@@ -42,17 +36,16 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         cancelBackButton = findViewById(R.id.btn_cancel_back);
         saveButton = findViewById(R.id.btn_save);
         deleteButton = findViewById(R.id.btn_delete);
-        //notesListview = findViewById(R.id.notesListView);
+
+        // It gets extras from MainActivity
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             selectedNoteTitle = extras.getString("NoteTitle");
             selectedNoteContent = extras.getString("NoteContent");
         }
-
         if (selectedNoteTitle != null) {
             titleInputText.setText(selectedNoteTitle);
             contentInputText.setText(selectedNoteContent);
-
         }
         //assert selectedNoteTitle != null;
         //Log.d("notTitle", selectedNoteTitle);
@@ -66,19 +59,27 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 fileManager.saveNoteToFile(
                         titleInputText.getText().toString(),
                         contentInputText.getText().toString()
                 );
+                navigator = new Navigator(view.getContext());
                 navigator.navigateToMainActivity();
-
             }
         });
-    }
 
-    @Override
-    public String getNote() {
-        return null;
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle extras = getIntent().getExtras();
+                if (extras != null) {
+                    selectedNoteTitle = extras.getString("NoteTitle");
+                }
+                fileManager.deleteFile(selectedNoteTitle);
+                navigator = new Navigator(view.getContext());
+                navigator.navigateToMainActivity();
+            }
+        });
     }
 }
