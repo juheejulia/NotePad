@@ -1,7 +1,6 @@
 package com.example.notepad.Models;
 
 import android.content.Context;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;

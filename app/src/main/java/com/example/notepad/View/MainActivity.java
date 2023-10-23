@@ -2,16 +2,12 @@ package com.example.notepad.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
 import com.example.notepad.Models.MainContract;
@@ -23,15 +19,12 @@ import com.example.notepad.R;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
 import java.util.List;
 
 // This main page shows all saved notes list and it is selectable
 public class MainActivity extends AppCompatActivity implements MainContract.View, EditorContract.View {
-
     MainContract.Presenter mainPresenter;
     EditorContract.Presenter editorPresenter;
-
     FloatingActionButton createNewNoteButton;
     ListView notesListView;
     MaterialCardView noteItem;
@@ -79,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             }
         });
     }
-
 
     //Display all notes in lists view
     @Override
