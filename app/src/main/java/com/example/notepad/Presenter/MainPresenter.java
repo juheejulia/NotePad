@@ -19,7 +19,7 @@ public class MainPresenter implements MainContract.Presenter {
     // The new created note which is added shall be displayed on the list view in MainActivity
     @Override
     public void onViewCreated() {
-        List<Note> notes = fileManager.getNotes();
+        List<Note> notes = fileManager.getNotesFromStorage();
         view.displayNotes(notes);
     }
 }

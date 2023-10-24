@@ -22,13 +22,12 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.List;
 
 // This main page shows all saved notes list and it is selectable
+// properties
 public class MainActivity extends AppCompatActivity implements MainContract.View, EditorContract.View {
     MainContract.Presenter mainPresenter;
     EditorContract.Presenter editorPresenter;
     FloatingActionButton createNewNoteButton;
     ListView notesListView;
-    MaterialCardView noteItem;
-    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         createNewNoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Here you can create new note", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Here you can create a new note", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
                 Intent intent = new Intent(MainActivity.this, EditorActivity.class);
@@ -62,13 +61,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Note selectedNote = (Note) parent.getItemAtPosition(position);
                 Intent intent = new Intent(MainActivity.this, EditorActivity.class);
+                // lägg till key, value pare som jag kan hämta från intent
                 intent.putExtra("NoteTitle", selectedNote.getTitle());
                 intent.putExtra("NoteContent", selectedNote.getContent());
                 startActivity(intent);
-
-                // Re-road activity
-                //finish();
-                //startActivity(getIntent());
             }
         });
     }

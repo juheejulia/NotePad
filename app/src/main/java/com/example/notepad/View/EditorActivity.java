@@ -52,8 +52,6 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
             titleInputText.setText(selectedNoteTitle);
             contentInputText.setText(selectedNoteContent);
         }
-        //assert selectedNoteTitle != null;
-        //Log.d("notTitle", selectedNoteTitle);
 
         cancelBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

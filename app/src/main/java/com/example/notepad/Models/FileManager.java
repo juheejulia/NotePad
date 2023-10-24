@@ -1,30 +1,26 @@
 package com.example.notepad.Models;
 
 import android.content.Context;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 // It reads local storage and builds note objects
 public class FileManager {
+    //Class/property(egenskap hos en klass)
+    // Type variable
     Context context;
+    //declare variable with default value
+    //cannot call notes outside of this class
     private static ArrayList<Note> notes = new ArrayList<>();
 
+    // constructor
     public FileManager(Context context) {
-        //String[] array;
         this.context = context;
-    }
-
-    public Note createNote(String title, String content) {
-        Note note = new Note(title);
-        note.setContent(content);
-        return note;
     }
 
     public void saveNoteToFile(String fileName, String content) {
@@ -39,7 +35,6 @@ public class FileManager {
             try {
                 FileWriter writer = new FileWriter(noteFile, false);
                 writer.write(content);
-                //writer.flush();
                 writer.close();
 
             } catch (IOException e) {
@@ -58,24 +53,36 @@ public class FileManager {
         }
     }
 
-    // Saved note shows on the list view
-    public List<Note> getNotes() {
-        notes.clear();
+    // Read all notes from local storage and add to notes array list.
+    public List<Note> getNotesFromStorage() {
+        notes.clear(); // Clean array list before populating from storage.
+        // Create file manage class
+        // Deklarera nytt variabel och sett nytt objekt.
         File path = new File(context.getFilesDir(),"MyNoteFile");
         if (!path.exists()) {
             path.mkdir();
         }
+        // lista alla filer i mappen "MyNoteFile"
         File[] list = path.listFiles();
         for (File file : list) {
-            String line = "";
+            //bygga alla rader till en string
+            StringBuilder content = new StringBuilder();
             try {
                 Scanner scanner = new Scanner(file);
-                line = scanner.nextLine();
+                // så länge scanner se en ny rad i filen loopa, läsa
+                while (scanner.hasNextLine()) {
+                    // lägg till nästa rad i content
+                    content.append(scanner.nextLine());
+                    content.append(System.lineSeparator());
+                }
             } catch (FileNotFoundException e) {
                 throw new RuntimeException (e);
             }
+            // I use fileName as title so remove file ending
             String noteTitle = file.getName().replace(".txt", "");
-            Note note = createNote(noteTitle, line); //line
+            //Model class, skapa nytt objekt av klassen, Note
+            Note note = new Note(noteTitle);
+            note.setContent(content.toString());
             notes.add(note);
         }
         return notes;
