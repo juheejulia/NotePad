@@ -22,11 +22,8 @@ public class FileManager {
     }
 
     public Note createNote(String title, String content) {
-        //Todo: create a file in local storage
-        //saveNoteToFile(title, content);
         Note note = new Note(title);
         note.setContent(content);
-        //notes.add(note);
         return note;
     }
 

@@ -8,9 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
+import com.example.notepad.Models.Note;
 import com.example.notepad.Presenter.EditorPresenter;
 import com.example.notepad.Presenter.Navigator;
 import com.example.notepad.R;
+
+import java.util.ArrayList;
 
 // This editor page viewed new/the selected note to edit and save it.
 public class EditorActivity extends AppCompatActivity implements EditorContract.View {
@@ -64,6 +67,7 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
                         titleInputText.getText().toString(),
                         contentInputText.getText().toString()
                 );
+                finish();
                 navigator = new Navigator(view.getContext());
                 navigator.navigateToMainActivity();
             }
@@ -77,6 +81,7 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
                     selectedNoteTitle = extras.getString("NoteTitle");
                 }
                 fileManager.deleteFile(selectedNoteTitle);
+                finish();
                 navigator = new Navigator(view.getContext());
                 navigator.navigateToMainActivity();
             }
