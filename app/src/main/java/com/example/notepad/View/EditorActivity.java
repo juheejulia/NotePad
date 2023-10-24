@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
 import com.example.notepad.Models.Note;
@@ -20,7 +22,7 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
 
     EditorContract.Presenter presenter;
     FileManager fileManager;
-    Button saveButton, cancelBackButton, deleteButton;
+    ImageButton cancelBackButton, saveButton, deleteButton;;
     EditText titleInputText, categoryInputText, contentInputText;
     Navigator navigator;
     String selectedNoteTitle, selectedNoteContent;

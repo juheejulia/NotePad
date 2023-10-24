@@ -60,6 +60,7 @@ public class FileManager {
 
     // Saved note shows on the list view
     public List<Note> getNotes() {
+        notes.clear();
         File path = new File(context.getFilesDir(),"MyNoteFile");
         if (!path.exists()) {
             path.mkdir();

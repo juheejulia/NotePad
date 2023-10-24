@@ -20,51 +20,48 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- cancel, back button -->
-        <Button
+        <ImageButton
             android:id="@+id/btn_cancel_back"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:backgroundTint="#E0E1E1"
             android:layout_marginEnd="30dp"
-            android:text="@string/cancel"
-            android:textColor="@color/black"
-            android:textSize="8sp"
+            android:src="@drawable/ic_back_arrow_24"
+            android:backgroundTint="#00000000"
+            android:alpha="0.7"
             app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-        </Button>
+        </ImageButton>
 
         <!-- save button -->
-        <Button
+        <ImageButton
             android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:backgroundTint="#E0E1E1"
-            android:text="@string/save"
-            android:textColor="@color/black"
-            android:textSize="8sp"
+            android:backgroundTint="#00000000"
+            android:alpha="0.7"
+            android:src="@drawable/ic_save_24"
             app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-        </Button>
+        </ImageButton>
 
         <!-- delete button -->
-        <Button
+        <ImageButton
             android:id="@+id/btn_delete"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:backgroundTint="#E0E1E1"
-            android:text="@string/delete"
-            android:textColor="@color/black"
+            android:backgroundTint="#00000000"
+            android:alpha="0.7"
             android:layout_marginStart="30dp"
-            android:textSize="8sp"
+            android:src="@drawable/ic_delete_24"
             app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-        </Button>
+        </ImageButton>
 
     </LinearLayout>
 
