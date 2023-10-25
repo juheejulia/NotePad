@@ -15,7 +15,7 @@ import com.example.notepad.R;
 // This editor page viewed new/the selected note to edit and save it.
 public class EditorActivity extends AppCompatActivity implements EditorContract.View {
 
-    EditorContract.Presenter presenter;
+    EditorContract.Presenter editorPresenter;
     FileManager fileManager;
     ImageButton cancelBackButton, saveButton, deleteButton;;
     EditText titleInputText, categoryInputText, contentInputText;
@@ -27,7 +27,8 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
 
-        presenter = new EditorPresenter(new FileManager(this), this, navigator);
+        navigator = new Navigator(this);
+        editorPresenter = new EditorPresenter(new FileManager(this), this, navigator);
         fileManager = new FileManager(this);
 
         titleInputText = findViewById(R.id.titleText);
@@ -58,13 +59,8 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fileManager.saveNoteToFile(
-                        titleInputText.getText().toString(),
-                        contentInputText.getText().toString()
-                );
+                editorPresenter.onSaveButtonClicked(titleInputText, contentInputText);
                 finish();
-                navigator = new Navigator(view.getContext());
-                navigator.navigateToMainActivity();
             }
         });
 

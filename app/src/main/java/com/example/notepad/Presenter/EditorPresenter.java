@@ -1,5 +1,7 @@
 package com.example.notepad.Presenter;
 
+import android.util.Log;
+import android.widget.EditText;
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
 
@@ -15,6 +17,11 @@ public class EditorPresenter implements EditorContract.Presenter {
     }
 
     @Override
-    public void onSaveButtonClicked() {
+    public void onSaveButtonClicked(EditText titleInputText, EditText contentInputText) {
+        fileManager.saveNoteToFile(
+                titleInputText.getText().toString(),
+                contentInputText.getText().toString()
+        );
+        navigator.navigateToMainActivity();
     }
 }
