@@ -1,7 +1,5 @@
 package com.example.notepad.Models;
 
-import com.example.notepad.Models.Note;
-
 import java.util.List;
 
 public interface MainContract {

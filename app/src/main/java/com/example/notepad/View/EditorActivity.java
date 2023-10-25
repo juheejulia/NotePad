@@ -4,18 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-
 import com.example.notepad.Models.EditorContract;
 import com.example.notepad.Models.FileManager;
-import com.example.notepad.Models.Note;
 import com.example.notepad.Presenter.EditorPresenter;
 import com.example.notepad.Presenter.Navigator;
 import com.example.notepad.R;
-
-import java.util.ArrayList;
 
 // This editor page viewed new/the selected note to edit and save it.
 public class EditorActivity extends AppCompatActivity implements EditorContract.View {

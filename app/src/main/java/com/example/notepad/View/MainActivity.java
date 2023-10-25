@@ -1,3 +1,5 @@
+// This is MVP architecture.
+
 package com.example.notepad.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,13 +18,11 @@ import com.example.notepad.Presenter.Navigator;
 import com.example.notepad.Presenter.EditorPresenter;
 import com.example.notepad.Presenter.MainPresenter;
 import com.example.notepad.R;
-import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.List;
 
 // This main page shows all saved notes list and it is selectable
-// properties
 public class MainActivity extends AppCompatActivity implements MainContract.View, EditorContract.View {
     MainContract.Presenter mainPresenter;
     EditorContract.Presenter editorPresenter;
@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         notesListView = findViewById(R.id.notesListView);
         createNewNoteButton = (FloatingActionButton) findViewById(R.id.btn_fa_create_new);
 
+        // The new created note which is added shall be displayed on the list view in MainActivity
+        mainPresenter.onViewCreated();
+
         // create a new note on clicking add floating action button
         createNewNoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,8 +55,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 startActivity(intent);
             }
         });
-        // The new created note which is added shall be displayed on the list view in MainActivity
-        mainPresenter.onViewCreated();
 
         // The old note shall be opened on the EditorActivity to edit and re-save
         notesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Note selectedNote = (Note) parent.getItemAtPosition(position);
                 Intent intent = new Intent(MainActivity.this, EditorActivity.class);
-                // lägg till key, value pare som jag kan hämta från intent
+                // lägga till key, value pare som jag kan hämta från intent
                 intent.putExtra("NoteTitle", selectedNote.getTitle());
                 intent.putExtra("NoteContent", selectedNote.getContent());
                 startActivity(intent);
@@ -69,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         });
     }
 
-    //Display all notes in lists view
     @Override
     public void displayNotes(List<Note> notes) {
         NoteAdapter adapter = new NoteAdapter(this,notes);
