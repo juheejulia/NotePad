@@ -22,6 +22,13 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
     Navigator navigator;
     String selectedNoteTitle, selectedNoteContent;
 
+    public String getTitleInputText() {
+        return titleInputText.getText().toString();
+    }
+
+    public String getContentInputText() {
+        return contentInputText.getText().toString();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +66,7 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editorPresenter.onSaveButtonClicked(titleInputText, contentInputText);
+                editorPresenter.onSaveButtonClicked();
                 finish();
             }
         });

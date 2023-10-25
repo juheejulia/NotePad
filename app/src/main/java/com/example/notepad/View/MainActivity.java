@@ -75,4 +75,14 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         NoteAdapter adapter = new NoteAdapter(this,notes);
         notesListView.setAdapter(adapter);
     }
+
+    @Override
+    public String getTitleInputText() {
+        return null;
+    }
+
+    @Override
+    public String getContentInputText() {
+        return null;
+    }
 }

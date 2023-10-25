@@ -17,11 +17,8 @@ public class EditorPresenter implements EditorContract.Presenter {
     }
 
     @Override
-    public void onSaveButtonClicked(EditText titleInputText, EditText contentInputText) {
-        fileManager.saveNoteToFile(
-                titleInputText.getText().toString(),
-                contentInputText.getText().toString()
-        );
+    public void onSaveButtonClicked() {
+        fileManager.saveNoteToFile(view.getTitleInputText(), view.getContentInputText());
         navigator.navigateToMainActivity();
     }
 }
