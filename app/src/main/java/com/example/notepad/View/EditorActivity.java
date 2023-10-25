@@ -5,19 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import com.example.notepad.Models.EditorContract;
+import com.example.notepad.EditorContract;
 import com.example.notepad.Models.FileManager;
 import com.example.notepad.Presenter.EditorPresenter;
 import com.example.notepad.Presenter.Navigator;
 import com.example.notepad.R;
 
-// This editor page viewed new/the selected note to edit and save it.
+// This editor activity viewed new/selected note in order to edit and save it.
 public class EditorActivity extends AppCompatActivity implements EditorContract.View {
     EditorContract.Presenter editorPresenter;
     FileManager fileManager;
-    ImageButton cancelBackButton, saveButton, deleteButton;;
-    EditText titleInputText, categoryInputText, contentInputText;
     Navigator navigator;
+    EditText titleInputText, contentInputText;
+    ImageButton cancelBackButton, saveButton, deleteButton;;
     String selectedNoteTitle, selectedNoteContent;
     Bundle extras;
 
@@ -43,7 +43,6 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         editorPresenter = new EditorPresenter(fileManager, this, navigator);
 
         titleInputText = findViewById(R.id.titleText);
-        categoryInputText = findViewById(R.id.categoryText);
         contentInputText = findViewById(R.id.contentText);
         cancelBackButton = findViewById(R.id.btn_cancel_back);
         saveButton = findViewById(R.id.btn_save);

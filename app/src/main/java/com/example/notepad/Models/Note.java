@@ -1,6 +1,5 @@
 package com.example.notepad.Models;
 
-// note data
 public class Note {
 
     private String title;

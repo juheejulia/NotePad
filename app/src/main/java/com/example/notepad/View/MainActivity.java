@@ -1,17 +1,16 @@
-// This is MVP architecture.
+// MVP architecture.
 
 package com.example.notepad.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import com.example.notepad.Models.EditorContract;
+import com.example.notepad.EditorContract;
 import com.example.notepad.Models.FileManager;
-import com.example.notepad.Models.MainContract;
+import com.example.notepad.MainContract;
 import com.example.notepad.Models.Note;
 import com.example.notepad.Presenter.Navigator;
 import com.example.notepad.Presenter.MainPresenter;
@@ -20,13 +19,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.List;
 
-// This main page shows all saved notes list and it is selectable
+// This main activity viewed all saved notes list and it is selectable
 public class MainActivity extends AppCompatActivity implements MainContract.View, EditorContract.View {
     MainContract.Presenter mainPresenter;
-    FloatingActionButton createNewNoteButton;
-    ListView notesListView;
     FileManager fileManager;
     Navigator navigator;
+    ListView notesListView;
+    FloatingActionButton createNewNoteButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

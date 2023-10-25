@@ -31,7 +31,6 @@ public class FileManager {
                 FileWriter writer = new FileWriter(noteFile, false);
                 writer.write(content);
                 writer.close();
-
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -50,7 +49,7 @@ public class FileManager {
 
     // Read all notes from local storage and add to notes array list.
     public List<Note> getNotesFromStorage() {
-        notes.clear(); // Clean array list before populating from storage.
+        notes.clear();
         File path = new File(context.getFilesDir(),"MyNoteFile");
         if (!path.exists()) {
             path.mkdir();

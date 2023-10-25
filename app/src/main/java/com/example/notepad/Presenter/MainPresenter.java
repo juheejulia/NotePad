@@ -1,9 +1,8 @@
 package com.example.notepad.Presenter;
 
 import com.example.notepad.Models.FileManager;
-import com.example.notepad.Models.MainContract;
+import com.example.notepad.MainContract;
 import com.example.notepad.Models.Note;
-
 import java.util.List;
 
 public class MainPresenter implements MainContract.Presenter {

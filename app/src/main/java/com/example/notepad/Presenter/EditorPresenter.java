@@ -1,6 +1,6 @@
 package com.example.notepad.Presenter;
 
-import com.example.notepad.Models.EditorContract;
+import com.example.notepad.EditorContract;
 import com.example.notepad.Models.FileManager;
 
 public class EditorPresenter implements EditorContract.Presenter {
