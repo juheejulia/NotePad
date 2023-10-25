@@ -85,4 +85,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     public String getContentInputText() {
         return null;
     }
+
+    @Override
+    public String getSelectedNoteTitle() {
+        return null;
+    }
 }

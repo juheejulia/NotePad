@@ -29,6 +29,15 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
     public String getContentInputText() {
         return contentInputText.getText().toString();
     }
+
+    public String getSelectedNoteTitle() {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            selectedNoteTitle = extras.getString("NoteTitle");
+        }
+        return selectedNoteTitle;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,14 +83,8 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle extras = getIntent().getExtras();
-                if (extras != null) {
-                    selectedNoteTitle = extras.getString("NoteTitle");
-                }
-                fileManager.deleteFile(selectedNoteTitle);
+                editorPresenter.onDeleteButtonClicked();
                 finish();
-                navigator = new Navigator(view.getContext());
-                navigator.navigateToMainActivity();
             }
         });
     }

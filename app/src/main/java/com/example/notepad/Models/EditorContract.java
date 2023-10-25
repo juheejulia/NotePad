@@ -8,9 +8,13 @@ public interface EditorContract {
         String getTitleInputText();
 
         String getContentInputText();
+
+        String getSelectedNoteTitle();
     }
 
     interface Presenter {
         void onSaveButtonClicked();
+
+        void onDeleteButtonClicked();
     }
 }
