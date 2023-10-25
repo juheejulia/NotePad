@@ -6,7 +6,8 @@ import com.example.notepad.View.EditorActivity;
 import com.example.notepad.View.MainActivity;
 
 public class Navigator {
-    private Context context;
+    private final Context context;
+
     public Navigator(Context context) {
         this.context = context;
     }
