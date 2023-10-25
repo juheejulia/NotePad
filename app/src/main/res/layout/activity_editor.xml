@@ -7,11 +7,10 @@
     android:layout_margin="@dimen/_30dp"
     android:backgroundTint="@color/my_light_primary">
 
-
-    <!-- save, cancel_back button -->
+    <!-- save, cancel/back, delete button layout-->
     <LinearLayout
         android:id="@+id/save_cancel_button_layout"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="3"
@@ -19,15 +18,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- cancel, back button -->
+        <!-- cancel/back button -->
         <ImageButton
             android:id="@+id/btn_cancel_back"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_40dp"
             android:layout_weight="1"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="@dimen/_30dp"
             android:src="@drawable/ic_back_arrow_24"
-            android:backgroundTint="#00000000"
+            android:backgroundTint="@color/_00000000"
             android:alpha="0.7"
             app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,10 +36,10 @@
         <!-- save button -->
         <ImageButton
             android:id="@+id/btn_save"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_40dp"
             android:layout_weight="1"
-            android:backgroundTint="#00000000"
+            android:backgroundTint="@color/_00000000"
             android:alpha="0.7"
             android:src="@drawable/ic_save_24"
             app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
@@ -51,27 +50,25 @@
         <!-- delete button -->
         <ImageButton
             android:id="@+id/btn_delete"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_40dp"
             android:layout_weight="1"
             android:backgroundTint="#00000000"
             android:alpha="0.7"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="@dimen/_30dp"
             android:src="@drawable/ic_delete_24"
             app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
         </ImageButton>
-
     </LinearLayout>
-
 
     <!-- layout of title, category, content -->
     <RelativeLayout
         android:id="@+id/titleCategoryContentLayout"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/_15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -83,51 +80,35 @@
             android:id="@+id/titleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="7dp"
+            android:layout_marginStart="@dimen/_7dp"
+            android:layout_marginTop="@dimen/_7dp"
+            android:layout_marginEnd="@dimen/_7dp"
+            android:layout_marginBottom="@dimen/_7dp"
             android:background="@null"
-            android:hint="Title"
+            android:hint="@string/title"
             android:maxLines="2"
             android:paddingStart="@dimen/_20dp"
-            android:textColor="#232323"
+            android:textColor="@color/_232323"
             android:textSize="@dimen/_30sp" />
 
-        <!-- card category text -->
-        <EditText
-            android:id="@+id/categoryText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/titleText"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@null"
-            android:hint="Category"
-            android:lines="1"
-            android:paddingStart="@dimen/_20dp"
-            android:textColor="#434242"
-            android:textSize="14sp" />
 
         <!-- card content text -->
         <EditText
             android:id="@+id/contentText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/categoryText"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/titleText"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:layout_marginBottom="@dimen/_5dp"
             android:background="@null"
             android:gravity="top"
-            android:hint="Here you can write your note."
-            android:lines="30"
+            android:hint="@string/content_example"
+            android:lines="25"
             android:paddingStart="@dimen/_20dp"
-            android:textColor="#232323"
-            android:textSize="14sp" />
+            android:textColor="@color/_232323"
+            android:textSize="@dimen/_16sp" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

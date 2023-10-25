@@ -49,7 +49,9 @@
     <string name="help">Help</string>
     <string name="save">SAVE</string>"
     <string name="exampleText">Here you can write your note.</string>
-    <string name="cancel">CANCEL</string>"
+    <string name="cancel">CANCEL</string>
+    <string name="title">Title</string>
+    <string name="content_example">Here you can write your note.</string>"
 
 
 </resources>
