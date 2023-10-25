@@ -1,8 +1,12 @@
 package com.example.notepad.Presenter;
 
+import android.view.View;
+
 import com.example.notepad.Models.FileManager;
 import com.example.notepad.Models.MainContract;
 import com.example.notepad.Models.Note;
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.List;
 
 public class MainPresenter implements MainContract.Presenter {
@@ -21,5 +25,12 @@ public class MainPresenter implements MainContract.Presenter {
     public void onViewCreated() {
         List<Note> notes = fileManager.getNotesFromStorage();
         view.displayNotes(notes);
+    }
+
+    @Override
+    public void onCreateNewNoteButtonClicked() {
+        navigator.navigateToEditorActivity();
+        //Intent intent = new Intent(MainActivity.this, EditorActivity.class);
+        //startActivity(intent);
     }
 }

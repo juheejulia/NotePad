@@ -2,7 +2,6 @@ package com.example.notepad.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -14,13 +13,13 @@ import com.example.notepad.R;
 
 // This editor page viewed new/the selected note to edit and save it.
 public class EditorActivity extends AppCompatActivity implements EditorContract.View {
-
     EditorContract.Presenter editorPresenter;
     FileManager fileManager;
     ImageButton cancelBackButton, saveButton, deleteButton;;
     EditText titleInputText, categoryInputText, contentInputText;
     Navigator navigator;
     String selectedNoteTitle, selectedNoteContent;
+    Bundle extras;
 
     public String getTitleInputText() {
         return titleInputText.getText().toString();
@@ -31,10 +30,6 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
     }
 
     public String getSelectedNoteTitle() {
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            selectedNoteTitle = extras.getString("NoteTitle");
-        }
         return selectedNoteTitle;
     }
 
@@ -43,9 +38,9 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
 
-        navigator = new Navigator(this);
-        editorPresenter = new EditorPresenter(new FileManager(this), this, navigator);
         fileManager = new FileManager(this);
+        navigator = new Navigator(this);
+        editorPresenter = new EditorPresenter(fileManager, this, navigator);
 
         titleInputText = findViewById(R.id.titleText);
         categoryInputText = findViewById(R.id.categoryText);
@@ -54,16 +49,8 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
         saveButton = findViewById(R.id.btn_save);
         deleteButton = findViewById(R.id.btn_delete);
 
-        // It gets extras from MainActivity
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            selectedNoteTitle = extras.getString("NoteTitle");
-            selectedNoteContent = extras.getString("NoteContent");
-        }
-        if (selectedNoteTitle != null) {
-            titleInputText.setText(selectedNoteTitle);
-            contentInputText.setText(selectedNoteContent);
-        }
+        extras = getIntent().getExtras();
+        getValuesFromExtras();
 
         cancelBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,5 +74,16 @@ public class EditorActivity extends AppCompatActivity implements EditorContract.
                 finish();
             }
         });
+    }
+
+    private void getValuesFromExtras() {
+        if (extras != null) {
+            selectedNoteTitle = extras.getString("NoteTitle");
+            selectedNoteContent = extras.getString("NoteContent");
+        }
+        if (selectedNoteTitle != null) {
+            titleInputText.setText(selectedNoteTitle);
+            contentInputText.setText(selectedNoteContent);
+        }
     }
 }

@@ -11,6 +11,8 @@ public interface MainContract {
     interface Presenter {
 
         void onViewCreated();
+
+        void onCreateNewNoteButtonClicked();
     }
 }
 
