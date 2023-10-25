@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">NotePad</string>
     <string name="delete">DELETE</string>
+    <string name="add_button">Add button</string>
+    <string name="search_hint">search</string>
+    <string name="my_notes">My Notes</string>
+    <string name="new_game">New game</string>
+    <string name="help">Help</string>
+    <string name="save">SAVE</string>"
+    <string name="exampleText">This is my note.</string>
+    <string name="cancel">CANCEL</string>
+    <string name="title">Title</string>
+    <string name="content_example">Here you can write your note.</string>
+    <string name="date">2023-10-25 / 23:10:19</string>"
     <string name="content">This is a content. Cras turpis sapien, rutrum sed cursus ut, porttitor at ipsum.
         Pellentesque lobortis neque at accumsan mattis. In hac habitasse platea dictumst.
         Etiam sed suscipit eros. Nunc consectetur arcu nec hendrerit lobortis.
@@ -42,16 +53,4 @@
         Fusce odio enim, condimentum in convallis sed, laoreet ac dolor. Duis urna ex,
         laoreet ut finibus in, commodo ac sem.
         Etiam in quam at leo finibus molestie sit amet eget justo</string>
-    <string name="add_button">Add button</string>
-    <string name="search_hint">search</string>
-    <string name="my_notes">My Notes</string>
-    <string name="new_game">New game</string>
-    <string name="help">Help</string>
-    <string name="save">SAVE</string>"
-    <string name="exampleText">Here you can write your note.</string>
-    <string name="cancel">CANCEL</string>
-    <string name="title">Title</string>
-    <string name="content_example">Here you can write your note.</string>"
-
-
 </resources>

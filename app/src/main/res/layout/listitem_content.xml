@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:flow_horizontalBias="0"
-    app:cardCornerRadius="7dp"
-    android:elevation="5dp"
-    app:cardPreventCornerOverlap="true"
-    >
+    app:cardCornerRadius="@dimen/_7dp"
+    android:elevation="@dimen/_5dp"
+    app:cardPreventCornerOverlap="true">
 
     <!-- card layout -->
     <LinearLayout
@@ -22,9 +21,9 @@
             android:id="@+id/textTitleCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="7dp"
+            android:layout_margin="@dimen/_7dp"
             android:paddingStart="@dimen/_20dp"
-            android:hint="title"
+            android:hint="@string/title"
             android:lines="1"
             android:textSize="@dimen/_16sp"
             android:textColor="@color/black"/>
@@ -34,48 +33,25 @@
             android:id="@+id/contentText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginTop="0dp"
-            android:hint="content"
+            android:layout_margin="@dimen/_5dp"
+            android:hint="@string/exampleText"
             android:paddingStart="@dimen/_20dp"
             android:lines="1"
             android:textSize="@dimen/_12sp"
-            android:textColor="#434242"/>
+            android:textColor="@color/_434242"/>
 
-        <LinearLayout
-            android:id="@+id/cardCategoryDateLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:orientation="horizontal">
-
-        <!-- card category text -->
+        <!-- cardView date text -->
         <TextView
-            android:id="@+id/categoryText"
+            android:id="@+id/dateText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/_5dp"
             android:layout_weight="1"
             android:paddingStart="@dimen/_20dp"
-            android:hint="category"
+            android:hint="@string/date"
             android:textSize="@dimen/_12sp"
             android:lines="1"
             android:textColor="@color/_3f3f49"/>
-
-            <!-- cardView date text -->
-            <TextView
-                android:id="@+id/dateText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:paddingEnd="@dimen/_20dp"
-                android:hint="date"
-                android:textSize="@dimen/_12sp"
-                android:textDirection="rtl"
-                android:lines="1"
-                android:textColor="@color/_3f3f49"/>
-        </LinearLayout>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

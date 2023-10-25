@@ -39,9 +39,9 @@
             android:layout_width="@dimen/_0dp"
             android:layout_height="@dimen/_40dp"
             android:layout_weight="1"
+            android:src="@drawable/ic_save_24"
             android:backgroundTint="@color/_00000000"
             android:alpha="0.7"
-            android:src="@drawable/ic_save_24"
             app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -53,10 +53,10 @@
             android:layout_width="@dimen/_0dp"
             android:layout_height="@dimen/_40dp"
             android:layout_weight="1"
-            android:backgroundTint="#00000000"
-            android:alpha="0.7"
             android:layout_marginStart="@dimen/_30dp"
             android:src="@drawable/ic_delete_24"
+            android:backgroundTint="@color/_00000000"
+            android:alpha="0.7"
             app:layout_constraintBottom_toTopOf="@+id/titleCategoryContentLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -84,10 +84,10 @@
             android:layout_marginTop="@dimen/_7dp"
             android:layout_marginEnd="@dimen/_7dp"
             android:layout_marginBottom="@dimen/_7dp"
+            android:paddingStart="@dimen/_20dp"
             android:background="@null"
             android:hint="@string/title"
             android:maxLines="2"
-            android:paddingStart="@dimen/_20dp"
             android:textColor="@color/_232323"
             android:textSize="@dimen/_30sp" />
 
@@ -102,11 +102,11 @@
             android:layout_marginTop="@dimen/_5dp"
             android:layout_marginEnd="@dimen/_5dp"
             android:layout_marginBottom="@dimen/_5dp"
+            android:paddingStart="@dimen/_20dp"
             android:background="@null"
             android:gravity="top"
             android:hint="@string/content_example"
             android:lines="25"
-            android:paddingStart="@dimen/_20dp"
             android:textColor="@color/_232323"
             android:textSize="@dimen/_16sp" />
     </RelativeLayout>
