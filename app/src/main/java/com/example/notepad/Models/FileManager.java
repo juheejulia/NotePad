@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -67,8 +68,11 @@ public class FileManager {
                 throw new RuntimeException (e);
             }
             String noteTitle = file.getName().replace(".txt", "");
+            long lastmodified = file.lastModified();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
             Note note = new Note(noteTitle);
             note.setContent(content.toString());
+            note.setDate(dateFormat.format(lastmodified));
             notes.add(note);
         }
         return notes;

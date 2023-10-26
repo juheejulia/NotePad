@@ -4,7 +4,7 @@ public class Note {
 
     private String title;
     private String content;
-    private int date;
+    private String date;
 
     public Note(String title) {
         this.title = title;
@@ -18,7 +18,7 @@ public class Note {
         return content;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -30,7 +30,7 @@ public class Note {
         this.content = content;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
