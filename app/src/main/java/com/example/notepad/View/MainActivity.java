@@ -1,3 +1,4 @@
+// Juhee Kang Johansson
 // MVP architecture.
 
 package com.example.notepad.View;
