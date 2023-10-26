@@ -1,4 +1,4 @@
-package com.example.notepad;
+package com.example.notepad.Presenter;
 
 public interface EditorContract {
 

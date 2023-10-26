@@ -20,13 +20,13 @@ public class NoteAdapter extends ArrayAdapter<Note> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        //create View object from our new layout .xml
-        View view = convertView;
 
+        View view = convertView;
         if(view == null){
-            view = LayoutInflater.from(getContext()).inflate(R.layout.listitem_content, parent, false);
+            view = LayoutInflater.from(getContext())
+                    .inflate(R.layout.listitem_content, parent, false);
         }
-        // call user object from out list
+
         Note note = getItem(position);
 
         //update our ViewObject with data from our list-object

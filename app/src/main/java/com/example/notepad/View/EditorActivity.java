@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import com.example.notepad.EditorContract;
+import com.example.notepad.Presenter.EditorContract;
 import com.example.notepad.Models.FileManager;
 import com.example.notepad.Presenter.EditorPresenter;
 import com.example.notepad.Presenter.Navigator;
